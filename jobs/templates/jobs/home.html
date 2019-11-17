@@ -36,18 +36,38 @@
   <body>
     <header>
     <!--here starts the navbar navigation bar menu-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Tolique</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Twitter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resume</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
     </header>
 
 <main role="main">
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1 class="jumbotron-heading">Album example</h1>
-      <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-      <!--<p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-      </p>-->
+      <h1 class="jumbotron-heading">Jobs</h1>
+      <p class="lead text-muted">This is an example of a Django test site.</p>
+      <p>
+        <a href="mailto:test@email.com" class="btn btn-primary my-2">Send me a message</a>
+        <!--<a href="#" class="btn btn-secondary my-2">Secondary action</a>-->
+      </p>
     </div>
   </section>
 
@@ -56,11 +76,12 @@
 
       <div class="row">
         {% for job in jobs.all %}
+
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img class="bd-placeholder-img card-img-top" src="{{ job.image.url }}" />
             <div class="card-body">
-              <p class="card-text">{{ job.summary}}</p>
+              <p class="card-text">{{ job.summary }}</p>
 
             </div>
           </div>
@@ -74,12 +95,10 @@
 </main>
 
 <footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
+  <div class="container text-center">
+    <p class="float-right">    </p>
+    <p> &copy; Tolique Co {% now "Y" %}</p>
+
   </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
