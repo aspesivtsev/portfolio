@@ -80,12 +80,17 @@
                 <div class="col-md-4">
                     <div class="card mb-4 shadow-sm">
 
+                        {% if every_blog_record.image %}
+                            <img class="bd-placeholder-img card-img-top" src="{{ every_blog_record.image.url }}" />
+                        {% else %}
+                            <img class="bd-placeholder-img card-img-top" src="../media/images/empty.png" />
 
-                        <img class="bd-placeholder-img card-img-top" src="{{ every_blog_record.image.url }}" />
+                        {% endif %}
+                        {# img class="bd-placeholder-img card-img-top img-fluid" src="{{ every_blog_record.image.url }}" /> #}
                         <div class="card-body">
                             <p class="card-text">{{ every_blog_record.title }}</p>
                             <p class="card-text">{{ every_blog_record.pub_date }}</p>
-                            <p class="card-text">{{ every_blog_record.body }}</p>
+                            <p class="card-text">{{ every_blog_record.summary }}</p>
                         </div>
                     </div>
                 </div>
