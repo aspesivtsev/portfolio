@@ -73,7 +73,6 @@
 
     <div class="album py-5 bg-light">
         <div class="container">
-
             <div class="row">
                 {% for every_blog_record in blog.all %}
 
@@ -88,9 +87,10 @@
                         {% endif %}
                         {# img class="bd-placeholder-img card-img-top img-fluid" src="{{ every_blog_record.image.url }}" /> #}
                         <div class="card-body">
-                            <p class="card-text">{{ every_blog_record.title }}</p>
-                            <p class="card-text">{{ every_blog_record.pub_date }}</p>
-                            <p class="card-text">{{ every_blog_record.summary }}</p>
+                            <p class="card-text"><strong><a href="">{{ every_blog_record.title }}</a></strong></p>
+                            <p class="card-text"><strong>Published on:</strong> {{ every_blog_record.pub_date }}</p>
+                            <p class="card-text"><strong>Updated on:</strong> {{ every_blog_record.mod_date }}</p>
+                            <p class="card-text">Topic: {{ every_blog_record.summary }}</p>
                         </div>
                     </div>
                 </div>
